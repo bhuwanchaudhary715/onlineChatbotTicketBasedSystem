@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Page</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="musuem.css">
+   
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">ArtBotTick</h1>
+            <nav class="navbar">
+                <a href="#" class="btn outline">Get started</a>
+                <a href="#" class="btn solid">Access account</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Museum Page -->
+    <section class="museum-page">
+        <!-- Slider Section -->
+        <div class="museum-slider">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="./photos/banglore1.webp" alt="BangalorePalace Image 1"></div>
+                    <div class="swiper-slide"><img src="./photos/bangalore2.jpg" alt="BangalorePalace 2"></div>
+                    <div class="swiper-slide"><img src="./photos/bangalore3.webp" alt="BangalorePalace 3"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Introduction Section -->
+        <div class="museum-intro">
+            <h2>Welcome to <span class="highlight">Bangalore Palace</span></h2>
+            <p><b>The Bangalore Palace</b>, located in Bengaluru, India, is one of the iconic landmarks . <br>It is a stunning example of Tudor Revival architecture and is steeped in history and royal charm.
+
+<!-- Features Section -->
+<div class="museum-features">
+    <h3>Features</h3>
+    <ul>
+        <li>
+            <strong>Central Dome:</strong> The palace is adorned with a striking central tower featuring fortified battlements, reminiscent of Tudor-style castles.
+        </li>
+        <li>
+            <strong>Gardens:</strong>  Bangalore Palace is surrounded by beautifully landscaped gardens, providing a serene environment perfect for leisurely walks and photo sessions.
+        </li>
+        <li>
+            <strong>Museum and Art Gallery:</strong> The interior houses a collection of royal memorabilia, including photographs, paintings, and vintage artifacts from the Wodeyar dynasty.
+        </li>
+    </ul>
+</div>
+
+        <!-- Details Section -->
+        <div class="museum-details">
+            <h3>Details</h3>
+            <div class="details-item">
+                <span class="details-title">Location:</span>
+                <span class="details-info">
+                    <a href="https://www.google.com/maps/dir//Bengaluru+Palace,+Bengaluru,+Karnataka/@12.999905,77.5901968,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bae1649294a5637:0xb1f8b77e331512cf!2m2!1d77.5890953!2d13.0035068?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" title="View on Google Maps">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/marker.png" alt="Location Icon" class="location-icon">
+                    </a>
+                    <span>Bengaluru Palace, Bengaluru, Karnata</span>
+                </span>
+            </div>
+            <div class="details-item">
+                <span class="details-title">Entry Time:</span>
+                <span class="details-info">10 AM - 5 PM</span>
+            </div>
+            <div class="details-item">
+                <span class="details-title">Entry Fee:</span>
+                <span class="details-info">₹260</span>
+            </div>
+            <div class="details-item">
+                <span class="details-title">Nearby Attractions:</span>
+                <span class="details-info">ISKCON Temple , Cubbon Park  , Fun World Amusement Park</span>
+            </div>
+            <div class="details-item">
+                <span class="details-title">Shows:</span>
+                <span class="details-info">Light and Sound Show, Historical Exhibitions</span>
+            </div>
+            <button class="btn-book " onclick="window.location.replace('/payment')">Book Ticket</button>
+        </div>
+    </section>
+
+    <!-- Floating Action Button -->
+    <div class="floating-btn" onclick="toggleChatbox()">
+        <img src="./photos/chatbot.png" alt="Chat Icon">
+    </div>
+
+    <!-- Chatbox -->
+    <div class="chatbox" id="chatbox">
+        <p>Hi, how can I help you?</p>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            centeredSlides: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+        });
+
+        function toggleChatbox() {
+            var chatbox = document.getElementById('chatbox');
+            if (chatbox.classList.contains('open')) {
+                chatbox.classList.remove('open');
+            } else {
+                chatbox.classList.add('open');
+            }
+        }
+
+        // Show initial message
+        window.onload = function() {
+            var chatbox = document.getElementById('chatbox');
+            chatbox.classList.add('open');
+        };
+    </script>
+</body>
+</html>

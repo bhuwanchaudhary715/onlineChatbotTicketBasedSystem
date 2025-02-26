@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MuseyBotTicket - Book Your Museum Tickets</title>
+    <link rel="stylesheet" href="landing.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+
+
+
+
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <!-- Animated Logo -->
+            <h1 class="logo">
+                <span class="logo-gradient">MyMuseum</span>
+                <div class="holographic-effect"></div>
+            </h1>
+
+            <nav class="navbar">
+                <!-- Quantum Theme Toggle -->
+                <div class="quantum-toggle">
+                    <input type="checkbox" id="theme-toggle" class="quantum-input">
+                    <label for="theme-toggle" class="quantum-label">
+                        <div class="quantum-core"></div>
+                        <div class="quantum-orbits">
+                            <div class="orbit"></div>
+                            <div class="orbit"></div>
+                            <div class="orbit"></div>
+                        </div>
+                        <div class="quantum-particles"></div>
+                    </label>
+                </div>
+
+                <!-- Enhanced Buttons -->
+                <a href="./login.html" class="btn stardust-btn">
+                    <span class="stardust-text">Get started</span>
+                    <div class="stardust-effect"></div>
+                </a>
+
+                <a href="./login.html" class="btn nebula-btn">
+                    <span class="nebula-text">Access account</span>
+                    <div class="nebula-glow"></div>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Animated Cosmic Background -->
+        <div class="cosmic-field">
+            <div class="quantum-strings"></div>
+            <div class="dark-matter"></div>
+            <div class="stellar-particles"></div>
+        </div>
+    </header>
+
+    <style>
+        :root {
+            --quantum-purple: #6366f1;
+            --neutrino-blue: #2563eb;
+            --dark-matter: #0f172a;
+            --event-horizon: #1e293b;
+            --starlight: #e0e7ff;
+            --supernova: #f59e0b;
+        }
+
+        /* Cosmic Header Base */
+        .header {
+            position: relative;
+            padding: 1.5rem 0;
+            background: rgba(16, 23, 41, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Quantum Toggle */
+        .quantum-toggle {
+            position: relative;
+            margin-right: 2rem;
+        }
+
+        .quantum-label {
+            display: block;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            position: relative;
+            background: var(--dark-matter);
+            box-shadow: 0 0 30px rgba(99,102,241,0.2);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .quantum-core {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: var(--starlight);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.8s ease;
+        }
+
+        .quantum-orbits .orbit {
+            position: absolute;
+            border: 2px solid var(--quantum-purple);
+            border-radius: 50%;
+            animation: quantum-spin 12s linear infinite;
+        }
+
+        .quantum-orbits .orbit:nth-child(1) { width: 100%; height: 100%; animation-delay: -4s; }
+        .quantum-orbits .orbit:nth-child(2) { width: 80%; height: 80%; animation-delay: -8s; }
+        .quantum-orbits .orbit:nth-child(3) { width: 60%; height: 60%; animation-delay: -12s; }
+
+        .quantum-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: particle-flow 16s linear infinite;
+        }
+
+        /* Button Enhancements */
+        .stardust-btn {
+            position: relative;
+            background: linear-gradient(45deg, var(--quantum-purple), var(--neutrino-blue));
+            border: none;
+            overflow: hidden;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            color: var(--starlight);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .stardust-effect {
+            position: absolute;
+            background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
+            mix-blend-mode: screen;
+            animation: stardust-pulse 4s infinite;
+        }
+
+        .nebula-btn {
+            background: var(--event-horizon);
+            border: 2px solid var(--quantum-purple);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            color: var(--starlight);
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nebula-glow {
+            position: absolute;
+            inset: 0;
+            box-shadow: 0 0 40px rgba(99,102,241,0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Animations */
+        @keyframes quantum-spin {
+            from { transform: rotate(0deg) scale(1); opacity: 0.8; }
+            to { transform: rotate(360deg) scale(1.2); opacity: 0.2; }
+        }
+
+        @keyframes particle-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes stardust-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.4; }
+            50% { transform: scale(1.4); opacity: 0.8; }
+        }
+
+        /* Dark Mode Transformations */
+        body.dark-mode .header {
+            background: rgba(16, 23, 41, 0.98);
+            border-bottom-color: rgba(255,255,255,0.15);
+        }
+
+        body.light-mode .header {
+            background: rgba(255,255,255,0.98);
+            border-bottom-color: rgba(0,0,0,0.1);
+        }
+
+        body.light-mode .quantum-label {
+            background: var(--starlight);
+            box-shadow: 0 0 30px rgba(251, 191, 36, 0.2);
+        }
+
+        body.light-mode .quantum-core {
+            background: var(--supernova);
+        }
+
+        /* Interactive States */
+        .quantum-label:hover {
+            transform: rotate(180deg) scale(1.1);
+            box-shadow: 0 0 50px rgba(99,102,241,0.4);
+        }
+
+        .stardust-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(99,102,241,0.4);
+        }
+
+        .nebula-btn:hover .nebula-glow {
+            opacity: 1;
+        }
+
+        /* Cosmic Background Elements */
+        .cosmic-field {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: radial-gradient(ellipse at center,
+            rgba(99,102,241,0.05) 0%,
+            rgba(16, 23, 41,0.95) 70%);
+        }
+
+        .quantum-strings {
+            position: absolute;
+            height: 100%;
+            width: 1px;
+            background: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(99,102,241,0.3) 50%,
+            transparent 100%);
+            animation: string-vibrate 4s infinite;
+        }
+
+        @keyframes string-vibrate {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(10px); }
+        }
+    </style>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Quantum Theme Handler
+        themeToggle.addEventListener('change', () => {
+            body.classList.toggle('dark-mode');
+            body.classList.toggle('light-mode');
+
+            // Create quantum effect
+            const quantumEffect = document.createElement('div');
+            quantumEffect.className = 'quantum-flash';
+            document.body.appendChild(quantumEffect);
+
+            // Save state
+            localStorage.setItem('quantum-theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+
+            setTimeout(() => quantumEffect.remove(), 1000);
+        });
+
+        // Initialize from storage
+        const savedTheme = localStorage.getItem('quantum-theme') || 'dark';
+        body.classList.add(savedTheme + '-mode');
+    </script>
+
+
+
+
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="header-glow"></div>
+            <h1 class="animated-heading">
+                <span class="text-gradient">Book Museum Tickets</span>
+                <span class="brand-mark">with MuseyBotTick</span>
+            </h1>
+            <div class="decorative-line"></div>
+            <p class="animated-subtext">
+                Discover cultural treasures through our intelligent booking system
+            </p>
+            <div class="cta-container">
+                <button class="elevated-btn">
+                    Start Exploring
+                    <span class="hover-effect"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .hero {
+            position: relative;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-glow {
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(99,102,241,0.05) 0%, transparent 60%);
+            z-index: -1;
+        }
+
+        .animated-heading {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .text-gradient {
+            background: linear-gradient(45deg, #2d3748, #4a5568);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: block;
+        }
+
+        .brand-mark {
+            color: #2d3748;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        .decorative-line {
+            width: 80px;
+            height: 2px;
+            background: #2d3748;
+            margin: 1.5rem auto;
+            opacity: 0.2;
+        }
+
+        .animated-subtext {
+            font-size: 1.1rem;
+            color: #4a5568;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .cta-container {
+            margin-top: 2.5rem;
+        }
+
+        .elevated-btn {
+            padding: 1rem 2rem;
+            background: #2d3748;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .hover-effect {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.1);
+            top: 0;
+            left: -100%;
+            transition: all 0.4s ease;
+            transform: skewX(-15deg);
+        }
+
+        .elevated-btn:hover .hover-effect {
+            left: 100%;
+        }
+
+        .elevated-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(45,55,72,0.2);
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animated-heading {
+            animation: fadeSlideUp 0.8s ease;
+        }
+
+        .animated-subtext {
+            animation: fadeSlideUp 0.8s 0.2s ease both;
+        }
+
+        @media (max-width: 768px) {
+            .animated-heading {
+                font-size: 2rem;
+            }
+
+            .animated-subtext {
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+
+
+
+   <!-- Top Museum Destinations -->
+    <section class="top-destinations">
+        <h3>Top Museum Destinations</h3>
+        <div class="container">
+            <div class="destinations-wrapper">
+                <button class="scroll-btn left-btn">&lt;</button>
+                <div class="destinations-scroll">
+
+
+                <div class="destination-card" onclick="window.location.href='/musuem'">
+                    <img src="https://lp-cms-production.imgix.net/2019-06/9483508eeee2b78a7356a15ed9c337a1-bengaluru-bangalore.jpg" alt="Bengaluru">
+                    <h5 class="museum-name">Bengaluru</h5>
+                </div>
+                <div class="destination-card">
+                    <img src="./photos/WhatsApp Image 2024-09-08 at 17.13.42_0ff574b8.jpg" alt="Udaipur">
+                    <h5 class="museum-name">Udaipur</h5>
+                </div>
+                <div class="destination-card">
+                    <img src="./photos/WhatsApp Image 2024-09-08 at 17.16.15_6daf8798.jpg" alt="Jaipur">
+                    <h5 class="museum-name">Jaipur</h5>
+                </div>
+                <div class="destination-card">
+                    <img src="./photos/kerala.jpg" alt="Kerala">
+                    <h5 class="museum-name">Kerala</h5>
+                </div>
+                <div class="destination-card">
+                    <img src="./photos/mumbai.jpg" alt="Mumbai">
+                    <h5 class="museum-name">Mumbai</h5>
+                </div>
+                <div class="destination-card">
+                    <img src="./photos/delhi.jpg" alt="Delhi">
+                    <h5 class="museum-name">Delhi</h5>
+                </div>
+            </div>
+            <button class="scroll-btn right-btn">&gt;</button>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<!-- Highly Recommended Section -->
+<section class="highly-recommended">
+    <h3>Highly Recommended</h3>
+    <div class="container">
+        <div class="slider">
+            <div class="recommended-grid">
+                <div class="recommended-card">
+                    <img src="./photos/railway.jpg" alt="National Rail museum">
+                    <div class="card-details">
+                        <h6>National Rail museum</h6>
+                        <p><strong>Location:</strong> New Delhi</p>
+                        <p><strong>Tickets:</strong> from Rs 50/ticket</p>
+                        <p><strong>Timing:</strong> 10 AM - 6 PM</p>
+                    </div>
+                </div>
+                <div class="recommended-card">
+                    <img src="./photos/DR.jpg" alt="Dr. Bhau Daji Lad Museum">
+                    <div class="card-details">
+                        <h6>Dr. Bhau Daji Lad Museum</h6>
+                        <p><strong>Location:</strong> Mumbai</p>
+                        <p><strong>Tickets:</strong> from Rs 50/ticket</p>
+                        <p><strong>Timing:</strong> 9 AM - 5 PM</p>
+                    </div>
+                </div>
+                <div class="recommended-card">
+                    <img src="./photos/doll.jpg" alt="National Doll Museum">
+                    <div class="card-details">
+                        <h6>National Doll Museum</h6>
+                        <p><strong>Location:</strong> Delhi</p>
+                        <p><strong>Tickets:</strong> from Rs 50/ticket</p>
+                        <p><strong>Timing:</strong> 11 AM - 7 PM</p>
+                    </div>
+                </div>
+                <div class="recommended-card">
+                    <img src="./photos/aviation.jpg" alt="Naval Aviation Museum">
+                    <div class="card-details">
+                        <h6>Naval Aviation Museum</h6>
+                        <p><strong>Location:</strong> Goa</p>
+                        <p><strong>Tickets:</strong> from Rs 50/ticket</p>
+                        <p><strong>Timing:</strong> 10 AM - 6 PM</p>
+                    </div>
+                </div>
+                <div class="recommended-card">
+                    <img src="./photos/Albert.jpg" alt="Albert Hall Museum">
+                    <div class="card-details">
+                        <h6>Albert Hall Museum</h6>
+                        <p><strong>Location:</strong> Jaipur</p>
+                        <p><strong>Tickets:</strong> from $30/ticket</p>
+                        <p><strong>Timing:</strong> 12 PM - 8 PM</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div class="container">
+        <footer class="custom-footer">
+            <div class="footer-content">
+                <p class="copyright">© 2024 Company, Inc</p>
+
+                <a href="/" class="brand-logo">
+                    <svg class="logo-icon" width="40" height="32">
+                        <use xlink:href="#bootstrap"></use>
+                        <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+                    </svg>
+                </a>
+
+                <ul class="nav-links">
+                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                </ul>
+            </div>
+
+            <!-- Animated border effect -->
+            <div class="footer-border"></div>
+        </footer>
+    </div>
+
+    <style>
+        .custom-footer {
+            position: relative;
+            padding: 2rem 0;
+            background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+            box-shadow: 0 -4px 30px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: #2d3748;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .copyright::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            background: #6366f1;
+            border-radius: 50%;
+        }
+
+        .brand-logo {
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-icon {
+            fill: #2d3748;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+            transition: all 0.3s ease;
+        }
+
+        .brand-logo:hover .logo-icon {
+            transform: rotate(15deg) scale(1.1);
+            fill: #6366f1;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: #4a5568;
+            text-decoration: none;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #6366f1;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: #2d3748;
+        }
+
+        .footer-border {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 50%, #6366f1 100%);
+            animation: border-flow 3s linear infinite;
+        }
+
+        @keyframes border-flow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .copyright::before {
+                display: none;
+            }
+        }
+    </style>
+
+
+
+
+    <!-- Chatbot Floating Button -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+            intent="Welcome"
+            chat-title="MUSEY AI CHATBOT"
+            agent-id="af7e29ba-8b3c-49fe-b22b-5052e147e0f5"
+            language-code="en"
+            chat-icon="https://cdn-icons-png.flaticon.com/512/8943/8943377.png"
+    ></df-messenger>
+    <style>
+        df-messenger {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #f59e0b;
+            --neon: #00f3ff;
+
+            --df-messenger-bot-message: rgba(11, 25, 45, 0.95);
+            --df-messenger-button-titlebar-color: var(--primary);
+            --df-messenger-chat-background-color: linear-gradient(135deg, #0b192f 0%, #1a2a4a 100%);
+            --df-messenger-font-color: white;
+            --df-messenger-send-icon: var(--neon);
+            --df-messenger-user-message: var(--secondary);
+        }
+
+        df-messenger::part(chat-container) {
+            border-radius: 25px !important;
+            background: linear-gradient(145deg, rgba(11,25,45,0.95) 0%, rgba(26,42,74,0.95) 100%) !important;
+            backdrop-filter: blur(15px) !important;
+            border: 1px solid rgba(255,255,255,0.1) !important;
+            box-shadow: 0 0 40px rgba(0,243,255,0.2),
+            inset 0 0 20px rgba(0,243,255,0.1) !important;
+            transform: perspective(1000px) rotateX(10deg) !important;
+        }
+
+        df-messenger::part(title-bar) {
+            background: linear-gradient(135deg, var(--primary), var(--secondary)) !important;
+            border-radius: 25px 25px 0 0 !important;
+            padding: 1.5rem !important;
+            box-shadow: 0 10px 30px rgba(99,102,241,0.3) !important;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Courier New', monospace;
+            text-shadow: 0 0 10px var(--neon);
+        }
+
+        df-messenger::part(chat-bubble) {
+            border-radius: 20px !important;
+            padding: 1.2rem !important;
+            margin: 15px 0 !important;
+            backdrop-filter: blur(5px) !important;
+            position: relative;
+            transition: all 0.3s ease !important;
+            border: 1px solid rgba(0,243,255,0.1) !important;
+        }
+
+        df-messenger::part(chat-bubble):hover {
+            transform: translateY(-3px) scale(1.02) !important;
+            box-shadow: 0 5px 15px rgba(0,243,255,0.2) !important;
+        }
+
+        df-messenger::part(user-message) {
+            background: linear-gradient(45deg, var(--secondary), var(--primary)) !important;
+            color: white !important;
+            border-radius: 20px 20px 0 20px !important;
+            animation: messageFloat 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+
+        df-messenger::part(bot-message) {
+            background: rgba(255,255,255,0.05) !important;
+            color: var(--neon) !important;
+            border-radius: 20px 20px 20px 0 !important;
+            border: 1px solid rgba(0,243,255,0.1) !important;
+        }
+
+        df-messenger::part(button) {
+            width: 70px !important;
+            height: 70px !important;
+            bottom: 40px !important;
+            right: 40px !important;
+            background: linear-gradient(45deg, var(--primary), var(--secondary)) !important;
+            box-shadow: 0 0 30px rgba(0,243,255,0.4),
+            inset 0 0 15px rgba(255,255,255,0.2) !important;
+            border: 2px solid var(--neon) !important;
+            animation: pulse 2s infinite, float 3s ease-in-out infinite !important;
+            transition: all 0.3s ease !important;
+        }
+
+        df-messenger::part(button):hover {
+            transform: scale(1.2) rotate(360deg) !important;
+            filter: hue-rotate(90deg) !important;
+        }
+
+        df-messenger::part(send-icon) {
+            filter: drop-shadow(0 0 5px var(--neon)) !important;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 30px rgba(0,243,255,0.4); }
+            50% { box-shadow: 0 0 50px rgba(0,243,255,0.6); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes messageFloat {
+            0% { opacity: 0; transform: translateY(20px) scale(0.9); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        df-messenger::part(chat-messages)::-webkit-scrollbar {
+            width: 8px;
+            background: rgba(0,0,0,0.1);
+        }
+
+        df-messenger::part(chat-messages)::-webkit-scrollbar-thumb {
+            background: linear-gradient(var(--primary), var(--secondary));
+            border-radius: 4px;
+        }
+
+        df-messenger::part(input-container) {
+            background: rgba(11,25,45,0.9) !important;
+            border-top: 1px solid rgba(0,243,255,0.1) !important;
+            padding: 1.2rem !important;
+        }
+
+        df-messenger input::placeholder {
+            color: rgba(255,255,255,0.4) !important;
+            letter-spacing: 1px;
+        }
+
+        df-messenger::part(input) {
+            background: rgba(255,255,255,0.05) !important;
+            color: var(--neon) !important;
+            border-radius: 15px !important;
+            border: 1px solid rgba(0,243,255,0.2) !important;
+            padding: 1rem !important;
+            transition: all 0.3s ease !important;
+        }
+
+        df-messenger::part(input):focus {
+            box-shadow: 0 0 20px rgba(0,243,255,0.2) !important;
+            border-color: var(--neon) !important;
+        }
+    </style>
+
+
+
+    <script src="landing.js"></script>
+</body>
+</html>

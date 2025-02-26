@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo img {
+    margin-right: 10px;
+}
+
+.nav-links a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+.nav-links a:hover {
+    color: #007BFF;
+}
+
+.language-selector select {
+    padding: 5px;
+}
+
+.main-content {
+    display: flex;
+    padding: 20px;
+}
+
+.sidebar {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar button {
+    padding: 15px;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sidebar button:hover {
+    background-color: #333;
+}
+
+.chatbox {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.chatbox h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.chat-window {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 300px;
+    overflow-y: auto;
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.message.bot .avatar {
+    background-color: #F0F0F0;
+}
+
+.message.user .avatar {
+    background-color: #D0D0D0;
+}
+
+.avatar {
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    background-color: #F1F1F1;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+}
+
+.input-area {
+    display: flex;
+    margin-top: 20px;
+}
+
+.input-area input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+.input-area button {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-area button:hover {
+    background-color: #333;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #F1F1F1;
+    
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-links a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+.footer-links a:hover {
+    color: #007BFF;
+}
+
+.social-media a img {
+    margin-right: 10px;
+}
+/* Add these styles for the question buttons and improvements */
+
+.question-options {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.question-btn {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.question-btn:hover {
+    background-color: #ddd;
+}
+
+/* Rest of the CSS remains the same */
+/* Add these styles for the question buttons and improvements */
+
+.question-options {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.question-btn {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.question-btn:hover {
+    background-color: #ddd;
+}
+
+.input-area {
+    display: flex;
+    margin-top: 10px;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+.input-area button {
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.input-area button:hover {
+    background-color: #333;
+}
+
+/* Chat window styles */
+.chat-window {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+
+.message {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 0;
+}
+
+.message .avatar {
+    margin-right: 10px;
+}
+
+.message .text {
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 60%;
+}
+
+.message.bot .text {
+    background-color: #e6e6e6;
+}
+
+.message.user .text {
+    background-color: #d1e7dd;
+    margin-left: auto;
+    text-align: right;
+}

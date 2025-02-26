@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Curator Pro | Admin Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #2A2D34;
+            --accent-color: #FF6B6B;
+            --text-light: #F4F4F9;
+            --museum-gold: #D4AF37;
+            --section-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        body {
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+        }
+
+        .art-sidebar {
+            background: var(--primary-color);
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .art-sidebar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(42, 45, 52, 0.9), rgba(42, 45, 52, 0.9)),
+            url('https://images.unsplash.com/photo-1578301978018-300de42b2d26?auto=format&fit=crop&w=800');
+            background-size: cover;
+            z-index: -1;
+        }
+
+        .sidebar-header {
+            border-bottom: 2px solid var(--museum-gold);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-header h1 {
+            color: var(--text-light);
+            font-size: 1.8rem;
+            letter-spacing: 1.5px;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .nav-item i {
+            color: var(--museum-gold);
+            width: 25px;
+        }
+
+        .main-content {
+            padding: 3rem;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--section-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin: 1rem 0;
+        }
+
+        .stat-label {
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .recent-activity {
+            background: var(--section-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .activity-list {
+            margin-top: 1.5rem;
+        }
+
+        .activity-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .museum-color-bar {
+            width: 4px;
+            height: 40px;
+            background: var(--museum-gold);
+            margin-right: 1rem;
+        }
+
+        .exhibition-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .exhibition-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .exhibition-image {
+            height: 200px;
+            background: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .exhibition-content {
+            padding: 1.5rem;
+        }
+    </style>
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<aside class="art-sidebar">
+    <div class="sidebar-header">
+        <h1>Museum Curator Pro</h1>
+    </div>
+    <nav>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <i class="fas fa-palette"></i>
+                Collections
+            </li>
+            <li class="nav-item">
+                <i class="fas fa-calendar-alt"></i>
+                Exhibitions
+            </li>
+            <li class="nav-item">
+                <i class="fas fa-chart-line"></i>
+                Analytics
+            </li>
+            <li class="nav-item">
+                <i class="fas fa-users"></i>
+                Visitors
+            </li>
+            <li class="nav-item">
+                <i class="fas fa-toolbox"></i>
+                Management
+            </li>
+            <li class="nav-item">
+                <i class="fas fa-cog"></i>
+                Settings
+            </li>
+        </ul>
+    </nav>
+</aside>
+
+<main class="main-content">
+    <div class="dashboard-header">
+        <h2>Curator Dashboard</h2>
+        <div class="user-profile">
+            <span>Welcome, Curator Smith</span>
+        </div>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-value">2,345</div>
+            <div class="stat-label">Total Artifacts</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">12</div>
+            <div class="stat-label">Current Exhibitions</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">3,892</div>
+            <div class="stat-label">Daily Visitors</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">5</div>
+            <div class="stat-label">Upcoming Events</div>
+        </div>
+    </div>
+
+    <div class="recent-activity">
+        <h3>Recent Activity</h3>
+        <div class="activity-list">
+            <div class="activity-item">
+                <div class="museum-color-bar"></div>
+                New Renaissance collection added
+            </div>
+            <div class="activity-item">
+                <div class="museum-color-bar"></div>
+                Exhibition "Ancient Civilizations" updated
+            </div>
+            <div class="activity-item">
+                <div class="museum-color-bar"></div>
+                15 new visitor reviews received
+            </div>
+        </div>
+    </div>
+
+    <div class="exhibition-preview">
+        <div class="exhibition-card">
+            <div class="exhibition-image" style="background-image: url('https://images.unsplash.com/photo-1580137189272-c9379ff8881a?auto=format&fit=crop&w=800')"></div>
+            <div class="exhibition-content">
+                <h4>Modern Art Masters</h4>
+                <p>Active until March 2024</p>
+            </div>
+        </div>
+        <div class="exhibition-card">
+            <div class="exhibition-image" style="background-image: url('https://images.unsplash.com/photo-1578301978018-300de42b2d26?auto=format&fit=crop&w=800')"></div>
+            <div class="exhibition-content">
+                <h4>Ancient Egypt Revealed</h4>
+                <p>Opening March 2024</p>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

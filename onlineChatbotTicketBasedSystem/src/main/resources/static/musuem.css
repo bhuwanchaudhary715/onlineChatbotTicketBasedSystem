@@ -1,0 +1,241 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.header {
+  background-color: #fff;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+}
+
+.navbar {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn.outline {
+  border: 1px solid #333;
+  color: #333;
+  background: transparent;
+}
+
+.btn.solid {
+  background-color: #333;
+  color: #fff;
+  border: none;
+}
+
+/* Museum Page Styles */
+.museum-page {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* Slider Styles */
+.museum-slider {
+  width: 85%; /* Increased width */
+  height: 350px; /* Slightly increased height */
+  margin: 0 auto 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 60vh;
+  /* object-fit: cover; */
+  border-radius: 10px;
+}
+
+/* Introduction Section */
+.museum-intro {
+  margin-bottom: 2rem;
+  padding: 0 120px; /* Match the padding used in the intro section */
+}
+
+.museum-intro h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.museum-intro p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  text-align: center;
+  padding: 0;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #000;
+}
+
+/* Details Section */
+.museum-details {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 80%;
+  margin: 0 auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.museum-details h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.details-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.details-title {
+  font-weight: bold;
+  color: #000;
+}
+
+.details-info {
+  display: flex;
+  align-items: center;
+  color: #333;
+}
+
+.location-icon {
+  width: 20px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.btn-book {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn-book:hover {
+  background-color: #333;
+}
+.floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1000;
+}
+.floating-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.chatbox {
+  display: none;
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  width: 250px;
+  z-index: 1000;
+}
+.chatbox p {
+  margin: 0;
+}
+.chatbox.open {
+  display: block;
+}
+
+.museum-features {
+  padding: 20px 150px; /* Match the padding used in the intro section */
+  background-color: #f4f4f4;
+  text-align: left;
+}
+
+.museum-features h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.museum-features ul {
+  list-style-type: disc; /* Use bullet points */
+  padding-left: 20px; /* Add padding to the left for bullets */
+  margin: 0;
+}
+
+.museum-features li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.museum-features strong {
+  color: #333;
+}
