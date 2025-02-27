@@ -15,7 +15,7 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("https://spontaneous-puffpuff-f1b151.netlify.app") // Allow your frontend origin
+                        .allowedOrigins("https://onlinechatbotticketbasedsystem-production.up.railway.app") // Allow your frontend origin
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*");
             }
