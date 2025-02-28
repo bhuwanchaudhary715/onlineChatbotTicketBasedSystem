@@ -676,20 +676,24 @@
 
 
     <!-- Chatbot Floating Button -->
-    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-    <df-messenger
-            intent="Welcome"
-            chat-title="MUSEY AI CHATBOT"
-            agent-id="af7e29ba-8b3c-49fe-b22b-5052e147e0f5"
-            language-code="en"
-            chat-icon="https://cdn-icons-png.flaticon.com/512/8943/8943377.png"
-    ></df-messenger>
+    <script>(function(){var js,fs,d=document,id="tars-widget-script",b="https://tars-file-upload.s3.amazonaws.com/bulb/";
+        if(!d.getElementById(id)){js=d.createElement("script");js.id=id;
+            js.type="text/javascript";
+            js.src=b+"js/widget.js";fs=d.getElementsByTagName("script")[0];
+            fs.parentNode.insertBefore(js,fs)}})();
+    window.tarsSettings = {"convid":"_cbynF"};
+    </script>
+
+
+
     <style>
         df-messenger {
             --primary: #6366f1;
             --secondary: #8b5cf6;
             --accent: #f59e0b;
             --neon: #00f3ff;
+            --cyber-blue: #00f3ff;
+            --cyber-pink: #ff00ff;
 
             --df-messenger-bot-message: rgba(11, 25, 45, 0.95);
             --df-messenger-button-titlebar-color: var(--primary);
@@ -700,128 +704,140 @@
         }
 
         df-messenger::part(chat-container) {
-            border-radius: 25px !important;
-            background: linear-gradient(145deg, rgba(11,25,45,0.95) 0%, rgba(26,42,74,0.95) 100%) !important;
-            backdrop-filter: blur(15px) !important;
-            border: 1px solid rgba(255,255,255,0.1) !important;
-            box-shadow: 0 0 40px rgba(0,243,255,0.2),
-            inset 0 0 20px rgba(0,243,255,0.1) !important;
-            transform: perspective(1000px) rotateX(10deg) !important;
+            border-radius: 30px !important;
+            background: linear-gradient(145deg, rgba(11,25,45,0.98) 0%, rgba(26,42,74,0.98) 100%) !important;
+            backdrop-filter: blur(20px) !important;
+            border: 2px solid rgba(255,255,255,0.15) !important;
+            box-shadow: 0 0 60px rgba(0,243,255,0.3),
+            0 0 100px rgba(128,0,255,0.2),
+            inset 0 0 30px rgba(0,243,255,0.1) !important;
+            transform: perspective(1000px) rotateX(10deg) rotateY(-5deg) !important;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
         }
 
         df-messenger::part(title-bar) {
-            background: linear-gradient(135deg, var(--primary), var(--secondary)) !important;
-            border-radius: 25px 25px 0 0 !important;
-            padding: 1.5rem !important;
-            box-shadow: 0 10px 30px rgba(99,102,241,0.3) !important;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            background: linear-gradient(135deg, var(--cyber-blue), var(--cyber-pink)) !important;
+            border-radius: 30px 30px 0 0 !important;
+            padding: 1.8rem !important;
+            box-shadow: 0 15px 40px rgba(0,243,255,0.4) !important;
             font-family: 'Courier New', monospace;
-            text-shadow: 0 0 10px var(--neon);
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px var(--cyber-blue),
+            0 0 10px var(--cyber-pink);
+            animation: titleGlow 2s ease-in-out infinite alternate;
         }
 
         df-messenger::part(chat-bubble) {
-            border-radius: 20px !important;
-            padding: 1.2rem !important;
-            margin: 15px 0 !important;
-            backdrop-filter: blur(5px) !important;
-            position: relative;
+            border-radius: 25px !important;
+            padding: 1.5rem !important;
+            margin: 20px 0 !important;
+            backdrop-filter: blur(10px) !important;
+            border: 1px solid rgba(0,243,255,0.2) !important;
             transition: all 0.3s ease !important;
-            border: 1px solid rgba(0,243,255,0.1) !important;
+            position: relative;
+            overflow: hidden;
         }
 
-        df-messenger::part(chat-bubble):hover {
-            transform: translateY(-3px) scale(1.02) !important;
-            box-shadow: 0 5px 15px rgba(0,243,255,0.2) !important;
+        df-messenger::part(chat-bubble)::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0,243,255,0.1));
+            pointer-events: none;
         }
 
         df-messenger::part(user-message) {
-            background: linear-gradient(45deg, var(--secondary), var(--primary)) !important;
-            color: white !important;
-            border-radius: 20px 20px 0 20px !important;
+            background: linear-gradient(45deg, var(--cyber-pink), var(--primary)) !important;
+            border-radius: 25px 25px 0 25px !important;
+            box-shadow: 0 5px 20px rgba(255,0,255,0.3) !important;
             animation: messageFloat 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
         }
 
         df-messenger::part(bot-message) {
-            background: rgba(255,255,255,0.05) !important;
-            color: var(--neon) !important;
-            border-radius: 20px 20px 20px 0 !important;
-            border: 1px solid rgba(0,243,255,0.1) !important;
+            background: rgba(0,0,0,0.3) !important;
+            border: 1px solid var(--cyber-blue) !important;
+            box-shadow: 0 5px 20px rgba(0,243,255,0.3) !important;
+            color: var(--cyber-blue) !important;
         }
 
         df-messenger::part(button) {
-            width: 70px !important;
-            height: 70px !important;
-            bottom: 40px !important;
-            right: 40px !important;
-            background: linear-gradient(45deg, var(--primary), var(--secondary)) !important;
-            box-shadow: 0 0 30px rgba(0,243,255,0.4),
-            inset 0 0 15px rgba(255,255,255,0.2) !important;
-            border: 2px solid var(--neon) !important;
-            animation: pulse 2s infinite, float 3s ease-in-out infinite !important;
-            transition: all 0.3s ease !important;
+            width: 80px !important;
+            height: 80px !important;
+            bottom: 50px !important;
+            right: 50px !important;
+            background: linear-gradient(45deg, var(--cyber-blue), var(--cyber-pink)) !important;
+            box-shadow: 0 0 50px rgba(0,243,255,0.6),
+            inset 0 0 20px rgba(255,255,255,0.3) !important;
+            border: 2px solid white !important;
+            animation: cyberPulse 1.5s infinite, float 3s ease-in-out infinite !important;
         }
 
         df-messenger::part(button):hover {
-            transform: scale(1.2) rotate(360deg) !important;
-            filter: hue-rotate(90deg) !important;
+            transform: scale(1.3) rotate(180deg) !important;
+            filter: hue-rotate(180deg) !important;
         }
 
-        df-messenger::part(send-icon) {
-            filter: drop-shadow(0 0 5px var(--neon)) !important;
+        @keyframes cyberPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
 
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 30px rgba(0,243,255,0.4); }
-            50% { box-shadow: 0 0 50px rgba(0,243,255,0.6); }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-
-        @keyframes messageFloat {
-            0% { opacity: 0; transform: translateY(20px) scale(0.9); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
-        }
-
-        df-messenger::part(chat-messages)::-webkit-scrollbar {
-            width: 8px;
-            background: rgba(0,0,0,0.1);
-        }
-
-        df-messenger::part(chat-messages)::-webkit-scrollbar-thumb {
-            background: linear-gradient(var(--primary), var(--secondary));
-            border-radius: 4px;
+        @keyframes titleGlow {
+            0% { text-shadow: 0 0 15px var(--cyber-blue); }
+            100% { text-shadow: 0 0 25px var(--cyber-pink); }
         }
 
         df-messenger::part(input-container) {
-            background: rgba(11,25,45,0.9) !important;
-            border-top: 1px solid rgba(0,243,255,0.1) !important;
-            padding: 1.2rem !important;
-        }
-
-        df-messenger input::placeholder {
-            color: rgba(255,255,255,0.4) !important;
-            letter-spacing: 1px;
+            background: rgba(0,0,0,0.5) !important;
+            border-top: 2px solid var(--cyber-blue) !important;
+            backdrop-filter: blur(10px);
         }
 
         df-messenger::part(input) {
-            background: rgba(255,255,255,0.05) !important;
-            color: var(--neon) !important;
-            border-radius: 15px !important;
-            border: 1px solid rgba(0,243,255,0.2) !important;
-            padding: 1rem !important;
-            transition: all 0.3s ease !important;
+            background: rgba(0,0,0,0.3) !important;
+            border: 2px solid var(--cyber-blue) !important;
+            border-radius: 20px !important;
+            padding: 1.2rem !important;
+            color: var(--cyber-blue) !important;
+            font-family: 'Courier New', monospace;
         }
 
-        df-messenger::part(input):focus {
-            box-shadow: 0 0 20px rgba(0,243,255,0.2) !important;
-            border-color: var(--neon) !important;
+        df-messenger::part(chat-messages)::-webkit-scrollbar {
+            width: 10px;
+            background: rgba(0,0,0,0.2);
+        }
+
+        df-messenger::part(chat-messages)::-webkit-scrollbar-thumb {
+            background: linear-gradient(var(--cyber-blue), var(--cyber-pink));
+            border-radius: 5px;
+        }
+
+        /* Cyberpunk-style border animation */
+        df-messenger::part(chat-container)::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg,
+            var(--cyber-blue),
+            var(--cyber-pink),
+            var(--cyber-blue));
+            z-index: -1;
+            animation: borderFlow 5s linear infinite;
+            border-radius: 30px;
+        }
+
+        @keyframes borderFlow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
         }
     </style>
-
 
 
     <script src="landing.js"></script>
